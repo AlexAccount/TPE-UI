@@ -1,0 +1,15 @@
+D:\TPE_COMMUNICATION\TPE_Communication\TPE_Communication\bin\Debug\Data\Parameters.xml
+D:\TPE_COMMUNICATION\TPE_Communication\TPE_Communication\bin\Debug\TPE_Communication.dll
+D:\TPE_COMMUNICATION\TPE_Communication\TPE_Communication\bin\Debug\TPE_Communication.pdb
+D:\TPE_COMMUNICATION\TPE_Communication\TPE_Communication\bin\Debug\appium-dotnet-driver.dll
+D:\TPE_COMMUNICATION\TPE_Communication\TPE_Communication\bin\Debug\Castle.Core.dll
+D:\TPE_COMMUNICATION\TPE_Communication\TPE_Communication\bin\Debug\Newtonsoft.Json.dll
+D:\TPE_COMMUNICATION\TPE_Communication\TPE_Communication\bin\Debug\WebDriver.dll
+D:\TPE_COMMUNICATION\TPE_Communication\TPE_Communication\bin\Debug\WebDriver.Support.dll
+D:\TPE_COMMUNICATION\TPE_Communication\TPE_Communication\bin\Debug\appium-dotnet-driver.xml
+D:\TPE_COMMUNICATION\TPE_Communication\TPE_Communication\bin\Debug\Castle.Core.xml
+D:\TPE_COMMUNICATION\TPE_Communication\TPE_Communication\bin\Debug\Newtonsoft.Json.xml
+D:\TPE_COMMUNICATION\TPE_Communication\TPE_Communication\bin\Debug\WebDriver.xml
+D:\TPE_COMMUNICATION\TPE_Communication\TPE_Communication\bin\Debug\WebDriver.Support.xml
+D:\TPE_COMMUNICATION\TPE_Communication\TPE_Communication\obj\Debug\TPE_Communication.dll
+D:\TPE_COMMUNICATION\TPE_Communication\TPE_Communication\obj\Debug\TPE_Communication.pdb
