@@ -11,7 +11,7 @@ namespace TPE_ProceduresUI.Tests
         {
             //Go to TPE page
             IList WelcomeMessage;
-            WelcomeMessage = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Locators.WelcomeMessage_L));
+            WelcomeMessage = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_SetUpConnection.WelcomeMessage_L));
            
             //Verify you are on the page
             Basic.BasicMethods.CheckElementExistance(1, WelcomeMessage, "There is no Welcome message on the page");
@@ -22,7 +22,7 @@ namespace TPE_ProceduresUI.Tests
 
             //Verify if you are logged in
             IList MainPage;
-            MainPage = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Locators.MainPage_L));
+            MainPage = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_SetUpConnection.MainPage_L));
                 Basic.BasicMethods.CheckElementExistance(1, MainPage, "Log In attempt failed");
                     Playback.Wait(5000);
 

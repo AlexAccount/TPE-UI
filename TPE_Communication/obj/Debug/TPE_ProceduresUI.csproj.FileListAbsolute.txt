@@ -14,6 +14,7 @@ d:\TPE\TPE\TPE_Communication\bin\Debug\WebDriver.Support.xml
 d:\TPE\TPE\TPE_Communication\obj\Debug\TPE_Communication.dll
 d:\TPE\TPE\TPE_Communication\obj\Debug\TPE_Communication.pdb
 D:\TeamServer\Xeikon\Xeikon\TPE_ProceduresUI\TPE_Communication\bin\Debug\Data\Parameters.xml
+D:\TeamServer\Xeikon\Xeikon\TPE_ProceduresUI\TPE_Communication\bin\Debug\TPE_Communication.dll.config
 D:\TeamServer\Xeikon\Xeikon\TPE_ProceduresUI\TPE_Communication\bin\Debug\TPE_Communication.dll
 D:\TeamServer\Xeikon\Xeikon\TPE_ProceduresUI\TPE_Communication\bin\Debug\TPE_Communication.pdb
 D:\TeamServer\Xeikon\Xeikon\TPE_ProceduresUI\TPE_Communication\bin\Debug\appium-dotnet-driver.dll
@@ -26,6 +27,5 @@ D:\TeamServer\Xeikon\Xeikon\TPE_ProceduresUI\TPE_Communication\bin\Debug\Castle.
 D:\TeamServer\Xeikon\Xeikon\TPE_ProceduresUI\TPE_Communication\bin\Debug\Newtonsoft.Json.xml
 D:\TeamServer\Xeikon\Xeikon\TPE_ProceduresUI\TPE_Communication\bin\Debug\WebDriver.xml
 D:\TeamServer\Xeikon\Xeikon\TPE_ProceduresUI\TPE_Communication\bin\Debug\WebDriver.Support.xml
-D:\TeamServer\Xeikon\Xeikon\TPE_ProceduresUI\TPE_Communication\obj\Debug\TPE_ProceduresUI.csprojResolveAssemblyReference.cache
 D:\TeamServer\Xeikon\Xeikon\TPE_ProceduresUI\TPE_Communication\obj\Debug\TPE_Communication.dll
 D:\TeamServer\Xeikon\Xeikon\TPE_ProceduresUI\TPE_Communication\obj\Debug\TPE_Communication.pdb

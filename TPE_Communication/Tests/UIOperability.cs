@@ -18,16 +18,16 @@ namespace TPE_ProceduresUI.Tests
             Playback.Wait(8000);
 
             //Check common Expand & Collapse buttons ("+" & "-") 
-            IWebElement MinusBtn = Basic.DriverSingletone.Chrome_Driver.FindElement(By.XPath(Locators.MinusBtn_L));
-            IWebElement PlusBtn = Basic.DriverSingletone.Chrome_Driver.FindElement(By.XPath(Locators.PlusBtn_L));
+            IWebElement MinusBtn = Basic.DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_SetUpConnection.MinusBtn_L));
+            IWebElement PlusBtn = Basic.DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_SetUpConnection.PlusBtn_L));
 
             PlusBtn.Click();
-                IList DrumTransfer = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Locators.DrumTransfer_L));
-                IList CarProtB = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Locators.CarProtB_L));
-                IList GridVolt = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Locators.GridVolt_L));
-                IList PowManag = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Locators.PowManag_L));
-                IList LDAPowS = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Locators.LDAPowS_L));
-                IList TestLDALow = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Locators.TestLDALow_L));
+                IList DrumTransfer = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_SetUpConnection.DrumTransfer_L));
+                IList CarProtB = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_SetUpConnection.CarProtB_L));
+                IList GridVolt = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_SetUpConnection.GridVolt_L));
+                IList PowManag = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_SetUpConnection.PowManag_L));
+                IList LDAPowS = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_SetUpConnection.LDAPowS_L));
+                IList TestLDALow = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_SetUpConnection.TestLDALow_L));
 
             Basic.BasicMethods.CheckElementExistance(2, DrumTransfer, "DrumTransfer tree NOT FOUND");
             Basic.BasicMethods.CheckElementExistance(1, CarProtB, "Carrier protection board tree NOT FOUND");
@@ -50,24 +50,24 @@ namespace TPE_ProceduresUI.Tests
             //Playback.Wait(1000);
 
             //Switch from Tree view to Folder view
-            IWebElement FolderViewBtn = Basic.DriverSingletone.Chrome_Driver.FindElement(By.XPath(Locators.FolderViewBtn_L));
+            IWebElement FolderViewBtn = Basic.DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_SetUpConnection.FolderViewBtn_L));
             FolderViewBtn.Click();
-            IList MinusBtn_NO = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Locators.MinusBtn_L));
-            IList PlusBtnNO = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Locators.PlusBtn_L));
+            IList MinusBtn_NO = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_SetUpConnection.MinusBtn_L));
+            IList PlusBtnNO = Basic.DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_SetUpConnection.PlusBtn_L));
                  Basic.BasicMethods.CheckElementExistance(0 , MinusBtn_NO, "The UI didn't switch to Folder View");
                  Basic.BasicMethods.CheckElementExistance(0, PlusBtnNO, "The UI didn't switch to Folder View");
 
             //Select any folder and test Up & Home button 
-            IWebElement AnyFolder = Basic.DriverSingletone.Chrome_Driver.FindElement(By.XPath(Locators.AnyFolder_L)); //now it's New Active Procedures. Later it should be changed on Real
+            IWebElement AnyFolder = Basic.DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_SetUpConnection.AnyFolder_L)); //now it's New Active Procedures. Later it should be changed on Real
             AnyFolder.Click();
                 Basic.BasicMethods.CheckElementExistance(1, DrumTransfer, "Nested folder hasn't been opened");
 
             //Verify that Up button allows user to go one level up in the list
-            IWebElement ParantLevBtn = Basic.DriverSingletone.Chrome_Driver.FindElement(By.XPath(Locators.ParantLevBtn_L));
+            IWebElement ParantLevBtn = Basic.DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_SetUpConnection.ParantLevBtn_L));
                 Assert.IsTrue(ParantLevBtn.Enabled, "Parent Level button is disabled");
 
             //Verify that Home button returns initial list of procedures groups
-            IWebElement HomeBtn = Basic.DriverSingletone.Chrome_Driver.FindElement(By.XPath(Locators.HomeBtn_L));
+            IWebElement HomeBtn = Basic.DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_SetUpConnection.HomeBtn_L));
                 HomeBtn.Click();
                     Assert.IsTrue(!HomeBtn.Enabled, "Open root level button is enabled");
                     
