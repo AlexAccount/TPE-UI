@@ -13,6 +13,9 @@ using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Appium.Enums;
 using TPE_ProceduresUI.Tests;
+using NUnit.Framework;
+using TestContext = Microsoft.VisualStudio.TestTools.UnitTesting.TestContext;
+using Sikuli4Net.sikuli_UTIL;
 
 namespace TPE_ProceduresUI
 {
@@ -37,7 +40,9 @@ namespace TPE_ProceduresUI
         [TestMethod]
         public void TC_2_TestCarrierProtectionMainChargeVoltage_DoorsClosed()
         {
-            TestCarrierProtMainChVolt._TestCarrierProtMainChVolt(); 
+            //UnitTestSetup.RunBeforeEachTest();
+            TestCarrierProtMainChVolt._TestCarrierProtMainChVolt();
+            //UnitTestSetup.RunAfterEachTest();
         }
 
         [TestMethod]
@@ -51,6 +56,24 @@ namespace TPE_ProceduresUI
         // You can use the following additional attributes as you write your tests:
 
         //Use TestInitialize to run code before running each test 
+
+        [SetUpFixture]
+        public class UnitTestSetup
+        {
+            public static APILauncher Launcher = new APILauncher(true);
+            [SetUp]
+            public static void RunBeforeEachTest()
+            {
+                Launcher.Start();
+            }
+
+            [TearDown]
+            public static void RunAfterEachTest()
+            {
+                Launcher.Stop();
+            }
+        }
+
         [TestInitialize()]
         public void MyTestInitialize()
         {

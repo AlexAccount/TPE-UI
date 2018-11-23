@@ -1,20 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Windows.Input;
-using System.Windows.Forms;
-using System.Drawing;
-using Microsoft.VisualStudio.TestTools.UITesting;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.VisualStudio.TestTools.UITest.Extension;
-using Keyboard = Microsoft.VisualStudio.TestTools.UITesting.Keyboard;
-using OpenQA.Selenium.Appium;
-using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Remote;
-using OpenQA.Selenium.Appium.Enums;
-using System.Collections;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using System.Xml;
 
 namespace TPE_ProceduresUI.Basic
 {
@@ -24,6 +9,7 @@ namespace TPE_ProceduresUI.Basic
         {
             bool value = element.Displayed;
             Assert.IsTrue(value, elementName + " is not visible on the page.");
+           
         }
 
         public static void ElementIsVisible(IWebElement element1, IWebElement element2, string elementName1, string elementName2)

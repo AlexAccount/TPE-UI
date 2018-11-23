@@ -1,0 +1,1 @@
+:::Making Request to Service: http://localhost:8080/sikuli/api/exists POST: {"jPattern":{"imagePath":"d:\\TeamServer\\Xeikon\\Xeikon\\TPE_ProceduresUI\\Resources\\HomeWindow.jpeg","offset_x":0,"offset_y":0,"similar":0.9},"timeout":15.0,"patternExists":false,"jResult":null}:::

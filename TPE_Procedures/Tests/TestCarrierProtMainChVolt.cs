@@ -1,5 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UITesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Appium.Interfaces;
+using OpenQA.Selenium.Appium.MultiTouch;
+using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,8 +19,9 @@ namespace TPE_ProceduresUI.Tests
         public static void _TestCarrierProtMainChVolt()
         {
             #region Variables 
-            
+            //string ImgPath = "d:\\TeamServer\\Xeikon\\Xeikon\\TPE_ProceduresUI\\Resources\\";
             #endregion
+
 
             //Go to Drum transfer
             IWebElement DrumTransfer_E = DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.DrumTransfer));
@@ -26,22 +31,25 @@ namespace TPE_ProceduresUI.Tests
             //Verify new tree Carrier protection board exists
             IList CarrierProtBoard = DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.CarrierBoard));
             IWebElement CarrierProtBoard_E = DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.CarrierBoard));
-                ElementExists.CheckStepsElements(1, CarrierProtBoard, 
-                    "Carrier protection board tree");
-                            
+                ElementExists.CheckStepsElements(1, CarrierProtBoard,
+                "Carrier protection board tree");
+
             //Go to Carrier protection board
             CarrierProtBoard_E.Click();
-                    
+
+            //Move down
+            IWebElement TestCPMCV_E = DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.TestCPMCV));
+                BasicMethods.SwipeToElement(TestCPMCV_E);
+
 
             //Verify TestCarrierProtectionMainChargeVoltage procedure exists in the list
             IList TestCPMCV = DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.TestCPMCV));
-                ElementExists.CheckStepsElements(1, TestCPMCV, 
-                    "Test carrier protection main charge voltage procedure");
+                ElementExists.CheckStepsElements(1, TestCPMCV,
+                "Test carrier protection main charge voltage procedure");
 
             //Click on the procedure
-            IWebElement TestCPMCV_E = DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.TestCPMCV));
-                TestCPMCV_E.Click();
-                    Playback.Wait(1500);
+            TestCPMCV_E.Click();
+            Playback.Wait(1500);
 
             /* 
             Verify there are no overlapping of content after going to Test carrier protection main charge voltage page
@@ -51,26 +59,17 @@ namespace TPE_ProceduresUI.Tests
             - Verify the message "Select a start option" exists 
             - Verify that button "Doors closed" exists
             */
-            
+
             IList Header1_L = DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.Header1));
             IList Header2_L = DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.Header2));
             IList SlectSTOpt_L = DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.SelectSTOpt));
             IList DoorsClosed_L = DriverSingletone.Chrome_Driver.FindElements(By.Id(Items_TestCarrierProtectionMainChargeVoltage_Closed.DoorsClosed));
-            IWebElement Header1_E = DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.Header1));
-            IWebElement Header2_E = DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.Header2));
-            IWebElement SlectSTOpt_E = DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.SelectSTOpt));
-            IWebElement DoorsClosed_E = DriverSingletone.Chrome_Driver.FindElement(By.Id(Items_TestCarrierProtectionMainChargeVoltage_Closed.DoorsClosed));
 
-            Visibility.ElementIsVisible(Header1_E, Header2_E, SlectSTOpt_E, DoorsClosed_E, 
-                "\"Test carrier protection main charge voltage\" main header",
-                "\"Procedure Test carrier protection main charge voltage\" second header",
-                "\"Select a start option\" message", 
-                "\"Doors closed\" buuton");
-            ElementExists.CheckStepsElements(1, Header1_L, Header2_L, SlectSTOpt_L, DoorsClosed_L, 
-                "Test carrier protection main charge voltage header", 
-                "Procedure Test carrier protection main charge voltage header", 
-                "Select a start option message", 
-                "Doors closed button");
+            ElementExists.CheckStepsElements(1, Header1_L, Header2_L, SlectSTOpt_L, DoorsClosed_L,
+               "Test carrier protection main charge voltage header",
+               "Procedure Test carrier protection main charge voltage header",
+               "Select a start option message",
+               "Doors closed button");
 
             //Click on the Doors closed button 
             IWebElement DoorsClosed = DriverSingletone.Chrome_Driver.FindElement(By.Id(Items_TestCarrierProtectionMainChargeVoltage_Closed.DoorsClosed));
@@ -104,29 +103,22 @@ namespace TPE_ProceduresUI.Tests
                 "Close doors: Input, Left and Right. Dock PMC boolet",
                 "Remove clear safety covers boolet",
                 "All dipswitches on carrier protection board must be switched on except switch 3.4 boolet");
-            Visibility.ElementIsVisible(B_RemoveDrums_E, B_ClooseDoors_E, B_RemoveClear_E, B_AllDipswitches_E,
-                "\"Remove drums\" boolet",
-                "\"Close doors: Input, Left and Right. Dock PMC\" boolet",
-                "\"Remove clear safety covers\" boolet",
-                "\"All dipswitches on carrier protection board must be switched on except switch 3.4\" boolet");
-
+            
             //Click the Execute button
             IWebElement ExecuteBtn_E = DriverSingletone.Chrome_Driver.FindElement(By.Id(Items_TestCarrierProtectionMainChargeVoltage_Closed.B_ExecuteBtn));
-
-            ExecuteBtn_E.Click();
+                ExecuteBtn_E.Click();
+                Playback.Wait(9500);
 
             //Text "3. Select units" exists
             IList Step3_L = DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.Step3));
-
-            ElementExists.CheckStepsElements(1, Step3_L, "Step 3 header \"Slect units\"");
+                ElementExists.CheckStepsElements(1, Step3_L, "Step 3 header \"Select units\"");
 
             //There is a message "Waiting on input" in the bottom
             IList WaitMess_L = DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.WaitMess));
-            IList iIcon_L = DriverSingletone.Chrome_Driver.FindElements(By.ClassName(Items_TestCarrierProtectionMainChargeVoltage_Closed.iIcon));
-
-            ElementExists.CheckStepsElements(1, WaitMess_L, iIcon_L,
-                "\"Waiting on input\" message",
-                "\"Info icon\"");
+            IList iIcon_L = DriverSingletone.Chrome_Driver.FindElements(By.CssSelector(Items_TestCarrierProtectionMainChargeVoltage_Closed.iIcon));
+                ElementExists.CheckStepsElements(1, WaitMess_L, iIcon_L,
+                    "\"Waiting on input\" message",
+                    "\"Info icon\"");
 
             //There are titiles: X4, X3, X2, X1
             IList X4_L = DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.X4Title));
@@ -145,7 +137,7 @@ namespace TPE_ProceduresUI.Tests
             //There is step description "Select print units"
             IList SelPU_L = DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.SelPU));
 
-            //There are checkboxes: X4, X3, X2, X1
+            //There are titles and checkboxes: X4, X3, X2, X1
             IList X4B_L = DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.X4_B));
             IList X3B_L = DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.X3_B));
             IList X2B_L = DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.X2_B));
@@ -163,6 +155,12 @@ namespace TPE_ProceduresUI.Tests
                 "X2 checkbox title",
                 "X1 checkbox title",
                 "X0 checkbox title");
+
+            //Swipe to None button
+            IWebElement NoneBtn_E = DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.NoneBtnB));
+                BasicMethods.SwipeToElement(NoneBtn_E);
+                    Playback.Wait(2000);
+
             ElementExists.CheckStepsElements(1, X4ChB_L, X3ChB_L, X2ChB_L, X1ChB_L, X0ChB_L,
                "X4 checkbox",
                "X3 checkbox",
@@ -180,40 +178,33 @@ namespace TPE_ProceduresUI.Tests
 
             //Verify there are no overlapping of content after going to Select units step
             IWebElement AllButton_E = DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.AllBtnB));
-            IWebElement NoneBtn_E = DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.NoneBtnB));
-                Visibility.ElementIsVisible(AllButton_E, NoneBtn_E, "The All button", "The None button");
-
+            
             //Click on the All button
             AllButton_E.Click();
 
             //Click the Execute button
             ExecuteBtn_E.Click();
-                Playback.Wait(6000);
+                System.Threading.Thread.Sleep(6000);
 
             //There is a message "Validating" in the bottom
             IList VallidMess_L = DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.ValidMessage));
             IWebElement VallidMess_E = DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.ValidMessage));
                 ElementExists.CheckStepsElements(1, VallidMess_L, "The Validating message in the bottom");
-                Visibility.ElementIsVisible(VallidMess_E, "The Validating message in the bottom");
 
-            //Busy sand clocks are displayed on X1, X2, X3, X4
+            //Wait------------------------------------------------ -
+            try
+            {
+                for (int i = 0; i < 9; i++)
+                {
+                    Task.Delay(10000).Wait();
+                }
+            }
+            catch { }
+                       
+            //Busy sand success ticks are displayed on X0, X1, X2, X3, X4
             IList SandClockItem_L = DriverSingletone.Chrome_Driver.FindElements(By.ClassName(Items_TestCarrierProtectionMainChargeVoltage_Closed.SandclockIcon));
             IWebElement SandClockItem_E = DriverSingletone.Chrome_Driver.FindElement(By.ClassName(Items_TestCarrierProtectionMainChargeVoltage_Closed.SandclockIcon));
-            ElementExists.CheckStepsElements(1, SandClockItem_L, "The X0 sandclocks");
-            Visibility.ElementIsVisible(SandClockItem_E, "The sandclock icon for X0");
-                    Playback.Wait(40000);
-                ElementExists.CheckStepsElements(1, SandClockItem_L, "The X1 sandclocks");
-                Visibility.ElementIsVisible(SandClockItem_E, "The sandclock icon for X1");
-                    Playback.Wait(40000);
-                ElementExists.CheckStepsElements(1, SandClockItem_L, "The X2 sandclocks");
-                Visibility.ElementIsVisible(SandClockItem_E, "The sandclock icon for X2");
-                    Playback.Wait(40000);
-                ElementExists.CheckStepsElements(1, SandClockItem_L, "The X3 sandclocks");
-                Visibility.ElementIsVisible(SandClockItem_E, "The sandclock icon for X3");
-                    Playback.Wait(40000);
-                ElementExists.CheckStepsElements(1, SandClockItem_L, "The X4 sandclocks");
-                Visibility.ElementIsVisible(SandClockItem_E, "The sandclock icon for X4");
-                    Playback.Wait(40000);
+                ElementExists.CheckStepsElements(5, SandClockItem_L, "The one or all success ticks");              
             
             /*
             There is description "This procedure will automatically test the carrier protection detection of the high voltage supplies which are selected at the top of the procedure pane. This may take several minutes.
@@ -224,13 +215,11 @@ namespace TPE_ProceduresUI.Tests
             IList DescriptionMessage_4_L = DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.DescriptionMessage_4));
             IWebElement DescriptionMessage_4_E = DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.DescriptionMessage_4));
                 ElementExists.CheckStepsElements(1, DescriptionMessage_4_L, "The 4th description step");
-                Visibility.ElementIsVisible(DescriptionMessage_4_E, "The 4th description step");
 
             //When all supplies have been validated There is a message "Ok" in the bottom
             IList OkMessage_L = DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.OK_Mess));
             IWebElement OkMessage_E = DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.OK_Mess));
                 ElementExists.CheckStepsElements(1, OkMessage_L, "The Ok success message");
-                Visibility.ElementIsVisible(OkMessage_E, "The Ok success message");
 
             //Click Execute 
             ExecuteBtn_E.Click();
@@ -250,9 +239,7 @@ namespace TPE_ProceduresUI.Tests
             IWebElement InitInfoMess_E = DriverSingletone.Chrome_Driver.FindElement(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.InitStateMess));
                 ElementExists.CheckStepsElements(1, StopStep_L, RemDrBoolet_L, RemClBoolet_L, InitInfoMess_L, "The Stop procedure step",
                 "The Remount drums step", "The remount clear safely covers", "The Initialized info message");
-                Visibility.ElementIsVisible(StopStep_E, RemDrBoolet_E, RemClBoolet_E, InitInfoMess_E, "The Stop procedure step",
-                "The Remount drums step", "The remount clear safely covers", "The Initialized info message");
-
+             
             //Click Execute
             ExecuteBtn_E.Click();
                 Playback.Wait(6000);
@@ -261,8 +248,12 @@ namespace TPE_ProceduresUI.Tests
             IList SuccessProcedure = DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.ProcedureSuccess));
                 ElementExists.CheckStepsElements(1, SuccessProcedure, "The message about success of the procedure");
 
+            //If there is no success message create log
+
+
             //You are on the main page 
-            Visibility.ElementIsVisible(DrumTransfer_E, "The Drum transfer tree");
+            IList DrumTransfer_L = DriverSingletone.Chrome_Driver.FindElements(By.XPath(Items_TestCarrierProtectionMainChargeVoltage_Closed.DrumTransfer));
+                ElementExists.CheckStepsElements(1, DrumTransfer_L, "Drum Transfer tree");
         }
 
     }

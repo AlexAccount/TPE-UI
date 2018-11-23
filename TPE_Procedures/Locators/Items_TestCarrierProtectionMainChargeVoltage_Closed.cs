@@ -3,9 +3,9 @@
     public class Items_TestCarrierProtectionMainChargeVoltage_Closed
     {
         //TC_2_TestCarrierProtectionMainChargeVoltage_DoorsClosed Group
-        public static string DrumTransfer = "//span[contains (text(), 'Drum transfer')]";
-        public static string CarrierBoard = "//span[contains (text(), 'Carrier protection board')]";
-        public static string TestCPMCV = "//span[contains (text(), 'Test carrier protection main charge voltage')]";
+        public static string DrumTransfer = "//span[contains(text(), 'Drum transfer')]";
+        public static string CarrierBoard = "//span[contains(text(), 'Carrier protection board')]";
+        public static string TestCPMCV = "//span[contains(text(), 'Test carrier protection main charge voltage')]";
         public static string Header1 = "//h1[contains(text(), 'Test carrier protection main charge voltage')]";
         public static string Header2 = "//h3[contains(text(), 'Procedure Test carrier protection main charge voltage')]";
         public static string SelectSTOpt = "//div[contains(text(), 'Select a start option')]";
@@ -16,9 +16,9 @@
         public static string B_RemoveClear = "//li[contains(text(), 'Remove clear safety covers')]";
         public static string B_AllDipswitches = "//li[contains(text(), 'All dipswitches on carrier protection board must be switched on except switch 3.4')]";
         public static string B_ExecuteBtn = "execute-btn";
-        public static string Step3 = "//h3[contains (text(), '3. Select units')]";
+        public static string Step3 = "//h3[contains(text(), '3. Select units')]";
         public static string WaitMess = "//span[contains(text(), 'Waiting on input')]";
-        public static string iIcon = "fa fa-info-circle";
+        public static string iIcon = "i[class$='-info-circle']"; //A link with an “class” that ends with the text “-info-circle”
         public static string X4Title = "//div[contains(text(), 'X4')]";
         public static string X3Title = "//div[contains(text(), 'X3')]";
         public static string X2Title = "//div[contains(text(), 'X2')]";
@@ -30,11 +30,11 @@
         public static string X2_B = "//label[contains(text(), 'X2')]";
         public static string X1_B = "//label[contains(text(), 'X1')]";
         public static string X0_B = "//label[contains(text(), 'X0')]";
-        public static string X4_ChB = "CheckBox_0";
-        public static string X3_ChB = "CheckBox_1";
-        public static string X2_ChB = "CheckBox_2";
-        public static string X1_ChB = "CheckBox_3";
-        public static string X0_ChB = "CheckBox_4";
+        public static string X4_ChB = "CheckBox_0undefined";
+        public static string X3_ChB = "CheckBox_1undefined";
+        public static string X2_ChB = "CheckBox_2undefined";
+        public static string X1_ChB = "CheckBox_3undefined";
+        public static string X0_ChB = "CheckBox_4undefined";
         public static string AllBtnB = "//button[contains(text(), 'All')]";
         public static string NoneBtnB = "//button[contains(text(), 'None')]";
         public static string SandclockIcon = "busy";

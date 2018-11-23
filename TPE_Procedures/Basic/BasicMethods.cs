@@ -15,8 +15,9 @@ using OpenQA.Selenium.Appium.Enums;
 using System.Collections;
 using OpenQA.Selenium;
 using System.Xml;
-
-
+using OpenQA.Selenium.Appium.MultiTouch;
+using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Appium.Interfaces;
 
 namespace TPE_ProceduresUI.Basic
 {
@@ -27,6 +28,35 @@ namespace TPE_ProceduresUI.Basic
         #region TAGS
         private const string PASSWORD_TAG = "TPEPassword";
         #endregion
+
+
+        //Need to have better decision when to call logpackage 
+        //public static void CreateLog()
+        //{
+        //    IList successMessage = DriverSingletone.Chrome_Driver.FindElements(By.XPath("//span[contains (text(), 'The procedure has been successfully finished')]"));
+        //    if (!Assert.Equals(1, successMessage.Count))
+        //    {
+
+        //    }     
+
+        //}
+
+        public static void SwipeCoordinates(IPerformsTouchActions driver, int startX, int startY, int endX, int endY, int duration)
+        {
+            ITouchAction touchAction = new TouchAction(driver)
+                .Press(startX, startY)
+                .Wait(duration)
+                .MoveTo(endX, endY)
+                .Release();
+
+            touchAction.Perform();
+        }
+
+
+        public static void SwipeToElement(IWebElement element)
+        {
+            ((IJavaScriptExecutor)DriverSingletone.Chrome_Driver).ExecuteScript("arguments[0].scrollIntoView(true);", element);
+        }
 
         public static string ParseData()
         {
